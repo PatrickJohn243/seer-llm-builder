@@ -27,9 +27,10 @@ const ParticlesComponent = (props: any) => {
         () => ({
             autoPlay: true,
             background: {
-                color: {
-                    value: "#1b1b1b",
-                },
+                // color: {
+                //     value: "#1b1b1b",
+                // },
+                repeat: "no-repeat"
             },
             fpsLimit: 120,
             interactivity: {
@@ -43,7 +44,7 @@ const ParticlesComponent = (props: any) => {
                         mode: "bubble",
                         parallax: {
                             enable: true,
-                            force: 120,
+                            force: 200,
                             smooth: 10
                         }
                     },
@@ -69,19 +70,24 @@ const ParticlesComponent = (props: any) => {
                 links: {
                     color: "#cb78ff",
                     distance: 150,
-                    enable: true,
+                    enable: false,
                     opacity: 0.3,
                     width: 1,
                 },
                 move: {
-                    direction: MoveDirection.none,
+                    direction: MoveDirection.top,
                     enable: true,
                     outModes: {
-                        default: "bounce",
+                        default: "out",
+                        top: "out",
+                        bottom: "out"
                     } as IOutModes,
                     random: true,
                     speed: 1,
-                    straight: false,
+                    straight: true,
+                },
+                life: {
+                    count: 0
                 },
                 number: {
                     density: {
@@ -109,6 +115,7 @@ const ParticlesComponent = (props: any) => {
                     }
                 },
             }
+
 
         }),
         []
