@@ -24,9 +24,9 @@
 
 body {
   cursor: none;
-  background: linear-gradient(
-    to bottom, 
-    rgb(var(--background-start-rgb)), 
-    rgb(var(--background-end-rgb))
-  );
+  background: radial-gradient(50% 50% at 50% 50%, #4c2471 15.5%, #0d0316 100%);
+}
+
+body * {
+  cursor: none !important;
 }
