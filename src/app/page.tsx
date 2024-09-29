@@ -35,7 +35,7 @@ export default function Home() {
       setIsShaking(true);
       setTimeout(() => {
         setIsShaking(false);
-      }, 350); 
+      }, 350);
       return;
     }
 
@@ -86,9 +86,9 @@ export default function Home() {
       x: [-5, 5, -3, 3, 0],
       //rotate: [-2, 2, -1, 1, 0],
       transition: {
-        duration: 0.35, 
+        duration: 0.35,
         ease: "easeOut",
-        times: [0, 0.25, 0.5, 0.75, 1], 
+        times: [0, 0.25, 0.5, 0.75, 1],
       },
     },
   };
@@ -102,6 +102,13 @@ export default function Home() {
         <MemoizedParticlesComponent id="particles" />
 
         <div className="absolute text-white top-0 left-0 w-full min-h-screen flex items-center justify-center">
+          <div className="absolute top-20 left-1/2 transform -translate-x-1/2">
+            <img
+              src="/colored_seer.png"
+              alt="SeerAI Logo"
+              className="w-36 h-auto" // Adjust size as needed
+            />
+          </div>
           <div className="flex flex-col items-center w-full">
             <motion.div
               variants={textVariants}
@@ -132,7 +139,7 @@ export default function Home() {
                 onChange={handleEmailChange}
               />
               <button
-                className="right-1.5 px-6 py-2 text-sm bg-indigo-600 text-white rounded-md flex hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="right-1.5 px-6 py-2 text-sm bg-[#812bd1] text-white rounded-md flex hover:bg-[#9f65d5] focus:outline-none focus:ring-2 focus:ring-[#9f65d5] focus:ring-offset-2 focus:ring-offset-gray-800"
                 onClick={handleJoinWaitlist}
               >
                 Join Waitlist
@@ -152,7 +159,9 @@ export default function Home() {
           </motion.div>
 
           <div className="fixed bottom-10 space-x-10 flex">
-            <FaFacebook className="hover:scale-125 transition duration-700 size-5 text-[#812bd1] hover:text-[#9f65d5]" />
+            <a href="https://www.facebook.com/profile.php?id=61566099090560" target="_blank" rel="noopener noreferrer">
+              <FaFacebook className="hover:scale-125 transition duration-700 size-5 text-[#812bd1] hover:text-[#9f65d5]" />
+            </a>
             <FaLinkedin className="hover:scale-125 transition duration-700 size-5 text-[#812bd1] hover:text-[#9f65d5]" />
             <FaXTwitter className="hover:scale-125 transition duration-700 size-5 text-[#812bd1] hover:text-[#9f65d5]" />
           </div>

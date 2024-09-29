@@ -47,7 +47,7 @@ export default function Home() {
               initial="hidden"
             >
               <h1 className="text-8xl font-bold my-7 bg-gradient-to-b from-[#7f54dc] from-1% to-[#cb78ff] to-90% bg-clip-text text-transparent">
-                COMING SOON!
+                COMING SOON
               </h1>
             </motion.div>
 
