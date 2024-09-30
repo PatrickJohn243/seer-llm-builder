@@ -1,31 +1,22 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log('Request received:', req.method);  // Log the request method
-
+export default async function handler(req: { method: string; body: { email: any; }; }, res: { status: (arg0: number) => { (): any; new(): any; json: { (arg0: { message: string; }): void; new(): any; }; }; }) {
   if (req.method === 'POST') {
     const { email } = req.body;
-
-    console.log('Email received:', email);  // Log the email received
-
-    if (!email || typeof email !== 'string') {
-      return res.status(400).json({ message: 'Invalid email' });
+    if (!email) {
+      return res.status(400).json({ message: 'Email is required' });
     }
 
+    const filePath = path.join(process.cwd(), 'email_list.txt');
+    
     try {
-      const filePath = path.join(process.cwd(), 'email_list.txt');
-      
       await fs.appendFile(filePath, `${email}\n`);
-      console.log('Email appended to file:', filePath);  // Log when the file is written
-      
-      return res.status(200).json({ message: 'Email appended successfully' });
+      return res.status(200).json({ message: 'Email added to waitlist' });
     } catch (error) {
-      console.error('Error saving email:', error);
-      return res.status(500).json({ message: 'Internal server error' });
+      return res.status(500).json({ message: 'Failed to add email' });
     }
-  } else {
-    return res.status(405).json({ message: 'Method not allowed' });
   }
+  
+  res.status(405).json({ message: 'Method not allowed' });
 }

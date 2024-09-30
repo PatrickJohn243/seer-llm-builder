@@ -121,8 +121,8 @@ export default function Home() {
             </motion.div>
 
             <div className="pb-7 text-center">
-              <p className="">Craft production-grade LLMs with ease</p>
-              <p className="">through drag-and-drop and templates</p>
+              <p className="text-[#d387ff]">Craft production-grade LLMs with ease</p>
+              <p className="text-[#d387ff]">through drag-and-drop and templates</p>
             </div>
 
             <motion.div
@@ -134,12 +134,12 @@ export default function Home() {
               <input
                 type="email"
                 placeholder="Your Email Address"
-                className="bg-transparent text-sm px-2 text-white placeholder-gray-400 focus:outline-none"
+                className="bg-transparent text-sm px-2 text-white placeholder-[#d387ff] focus:outline-none"
                 value={email}
                 onChange={handleEmailChange}
               />
               <button
-                className="right-1.5 px-6 py-2 text-sm bg-[#812bd1] text-white rounded-md flex hover:bg-[#9f65d5] focus:outline-none focus:ring-2 focus:ring-[#9f65d5] focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="text-black right-1.5 px-6 py-2 text-sm bg-[#d387ff] text-white rounded-md flex hover:bg-[#d387ff] focus:outline-none focus:ring-2 focus:ring-[#9f65d5] focus:ring-offset-2 focus:ring-offset-gray-800"
                 onClick={handleJoinWaitlist}
               >
                 Join Waitlist
